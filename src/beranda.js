@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import {
+    Container, Content, Text
+} from 'native-base'
+import Header from './components/header'
 
 export default class Beranda extends Component {
     render() {
         return (
-            <View>
-                <Text>Beranda</Text>
-            </View>
+            <Container>
+                <Header title="Katalog Obat" />
+                <Content padder>
+                    <Text>Beranda</Text>
+                </Content>
+            </Container>
         )
     }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+})
