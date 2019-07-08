@@ -35,10 +35,11 @@ export default class AppHeader extends Component {
         return (
             <Header style={styles.header}
                 androidStatusBarColor={this.statusBarColor}
-                iosBarStyle={this.iosBarStyle}>
+                iosBarStyle={this.iosBarStyle}
+                noLeft={!this.props.left}>
                 
                 <Left style={{paddingLeft: 8}}>
-                    <Icon type='FontAwesome5' name='pills' size={18} style={styles.icon} />
+                    { this.props.left ? this.props.left : null }
                 </Left>
 
                 <Body style={styles.titleBody}>
@@ -46,9 +47,13 @@ export default class AppHeader extends Component {
                 </Body>
 
                 <Right>
-                    <Button transparent onPress={() => this.toggleSearchBar(true)}>
-                        <Icon name='ios-search' style={styles.icon} />
-                    </Button>
+                    { this.props.searchBar && (
+                        <Button transparent onPress={() => this.toggleSearchBar(true)}>
+                            <Icon name='ios-search' style={styles.icon} />
+                        </Button>
+                    ) }
+
+                    { this.props.right ? this.props.right : null }
                 </Right>
             </Header>
         )
@@ -67,6 +72,6 @@ const styles = StyleSheet.create({
 
     icon: {
         color: '#333',
-        fontSize: 24
+        fontSize: 22
     }
 })
