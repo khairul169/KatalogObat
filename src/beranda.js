@@ -162,9 +162,10 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 16,
         backgroundColor: '#fff',
-        marginBottom: 16,
+        marginBottom: 10,
         paddingRight: 16,
-        elevation: 2,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
         flexDirection: 'row',
         alignItems: 'flex-start'
     },
