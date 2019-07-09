@@ -69,7 +69,8 @@ class ListObat extends Component {
             const name = item.name.toLowerCase();
             const category = item.category.toLowerCase();
             const desc = item.desc.toLowerCase();
-            return name.includes(query) || category.includes(query) || desc.includes(query);
+            const fullDesc = item.fullDesc ? item.fullDesc.toLowerCase() : null;
+            return name.includes(query) || category.includes(query) || desc.includes(query) || fullDesc.includes(query);
         });
     }
 
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginBottom: 16,
         paddingRight: 16,
-        elevation: 1,
+        elevation: 2,
         flexDirection: 'row',
         alignItems: 'flex-start'
     },
