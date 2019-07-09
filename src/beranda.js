@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, Linking } from 'react-native'
 import {
-    Content, Text, Icon
+    Content, Text, Icon, Button
 } from 'native-base'
 import Image from 'react-native-scalable-image'
 import Header from './components/header'
@@ -86,6 +86,10 @@ class ListObat extends Component {
         });
     }
 
+    bukaUrlKontribusi = () => {
+        Linking.openURL('https://github.com/khairul169/KatalogObat/issues');
+    }
+
     render() {
         this.itemList = [...listObat];
         this.itemList = this.filterItem(this.itemList);
@@ -93,7 +97,21 @@ class ListObat extends Component {
 
         return (
             <View>
-                { this.itemList.map((item, index) => (
+                { this.itemList.length <= 0 && (
+                    <View style={{alignItems: 'center', marginTop: 100}}>
+                        <Image source={require('../assets/empty-icon.png')} width={96} />
+                        
+                        <Text style={{color: '#484848', marginTop: 16, fontSize: 18}}>
+                            Obat tidak ditemukan!
+                        </Text>
+
+                        <Button style={{alignSelf: 'center', marginTop: 16}} onPress={this.bukaUrlKontribusi}>
+                            <Text>Berkontribusi atau Berikan Masukan ;)</Text>
+                        </Button>
+                    </View>
+                ) }
+
+                { this.itemList.length > 0 && this.itemList.map((item, index) => (
                     <ItemObat key={index} item={item}
                     onItemPressed={() => this.itemPressed(index)} />
                 )) }
