@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
 
     dataItemValue: {
-        flex: 2, fontSize: 16
+        flex: 2, fontSize: 16, color: '#424242'
     },
     
     descObat: {

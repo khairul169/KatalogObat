@@ -70,7 +70,8 @@ class ListObat extends Component {
             const category = item.category.toLowerCase();
             const desc = item.desc.toLowerCase();
             const fullDesc = item.fullDesc ? item.fullDesc.toLowerCase() : null;
-            return name.includes(query) || category.includes(query) || desc.includes(query) || fullDesc.includes(query);
+            return name.includes(query) || category.includes(query) || desc.includes(query)
+            || (fullDesc && fullDesc.includes(query));
         });
     }
 
