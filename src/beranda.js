@@ -69,6 +69,10 @@ class ListObat extends Component {
 
         return items.filter(item => {
             const nama = item.nama ? item.nama.toLowerCase() : null;
+            if (query.length === 1) {
+                return nama.startsWith(query);
+            }
+
             const golongan = item.golongan ? item.golongan.toLowerCase() : null;
             const manfaat = item.manfaat ? item.manfaat.toLowerCase() : null;
             const deskripsi = item.deskripsi ? item.deskripsi.toLowerCase() : null;
