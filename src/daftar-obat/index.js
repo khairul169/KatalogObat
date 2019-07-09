@@ -1,14 +1,14 @@
 import { Ibuprofen } from './analgetik'
 import {
-    Cetirizine,
-    Dexamethasone
+	Cetirizine,
+	Dexamethasone
 } from './antihistamin'
 
 export const listObat = [
-    // Analgetik
-    Ibuprofen,
+	// Analgetik
+	Ibuprofen,
 
-    // Antihistamin
-    Cetirizine,
-    Dexamethasone
+	// Antihistamin
+	Cetirizine,
+	Dexamethasone
 ]
