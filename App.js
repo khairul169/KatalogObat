@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import AppNavigator from './src/routes';
+import AppNavigator from './src/routes'
+import { Container } from 'native-base'
 
 export default class App extends Component {
 	constructor(props) {
@@ -11,7 +12,9 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<AppNavigator />
+			<Container>
+				<AppNavigator />
+			</Container>
 		)
 	}
 }

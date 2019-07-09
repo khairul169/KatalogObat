@@ -38,22 +38,22 @@ export default class AppHeader extends Component {
                 iosBarStyle={this.iosBarStyle}
                 noLeft={!this.props.left}>
                 
-                <Left style={{paddingLeft: 8}}>
+                <Left style={{flex: 1, paddingLeft: 8}}>
                     { this.props.left ? this.props.left : null }
                 </Left>
 
-                <Body style={styles.titleBody}>
+                <Body style={{flex: 5}}>
                     <Title style={styles.title}>{this.props.title}</Title>
                 </Body>
 
-                <Right>
+                <Right style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+                    { this.props.right ? this.props.right : null }
+
                     { this.props.searchBar && (
                         <Button transparent onPress={() => this.toggleSearchBar(true)}>
                             <Icon name='ios-search' style={styles.icon} />
                         </Button>
                     ) }
-
-                    { this.props.right ? this.props.right : null }
                 </Right>
             </Header>
         )
@@ -62,8 +62,7 @@ export default class AppHeader extends Component {
 
 const styles = StyleSheet.create({
     header: {
-        elevation: 2,
-        backgroundColor: '#fff',
+        backgroundColor: '#fff'
     },
 
     title: {
