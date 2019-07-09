@@ -1,14 +1,24 @@
-import { Ibuprofen } from './analgetik'
+import {
+	Ibuprofen,
+	Ketorolac,
+	Paracetamol,
+	Tramadol
+} from './anti-inflamasi'
 import {
 	Cetirizine,
-	Dexamethasone
+	Dexamethasone,
+	Epinephrine
 } from './antihistamin'
 
 export const listObat = [
-	// Analgetik
+	// Anti-inflamasi
 	Ibuprofen,
+	Ketorolac,
+	Paracetamol,
+	Tramadol,
 
 	// Antihistamin
 	Cetirizine,
-	Dexamethasone
+	Dexamethasone,
+	Epinephrine
 ]
