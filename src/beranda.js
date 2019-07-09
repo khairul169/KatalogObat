@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import {
-    Content, Text, Icon, Button
+    Content, Text, Icon
 } from 'native-base'
 import Image from 'react-native-scalable-image'
 import Header from './components/header'
 import PopupMenu from './components/popup-menu'
+import { listObat } from './daftar-obat'
 
 const ORDER_BY_ALPHABET = 0;
 const ORDER_BY_CATEGORY = 1;
@@ -15,7 +16,8 @@ class ItemObat extends Component {
         const item = this.props.item;
 
         return (
-            <View style={styles.obatItem}>
+            <TouchableOpacity style={styles.obatItem}
+            onPress={this.props.onItemPressed ? this.props.onItemPressed : null}>
                 <View style={{flex: 1, alignItems: 'center'}}>
                     <Image
                     source={item.img}
@@ -37,32 +39,13 @@ class ItemObat extends Component {
                         {item.desc}
                     </Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 }
 
 class ListObat extends Component {
-    items = [
-        {
-            name: 'Ibuprofen',
-            img: require('../assets/obat-img/ibuprofen.jpg'),
-            category: 'Analgesik, Antipiretik',
-            desc: 'Mengurangi rasa sakit akibat artritis.'
-        },
-        {
-            name: 'Cetirizine',
-            img: require('../assets/obat-img/cetirizine.jpg'),
-            category: 'Antihistamin',
-            desc: 'Mengatasi gejala-gejala alergi, seperti pilek dan bersin-bersin.'
-        },
-        {
-            name: 'Test',
-            img: require('../assets/obat-img/ibuprofen.jpg'),
-            category: 'Analgesik, Antipiretik',
-            desc: 'Mengurangi rasa sakit akibat artritis.'
-        }
-    ]
+    itemList = [];
 
     sortItems = (items) => {
         const ordering = this.props.ordering ? this.props.ordering : null;
@@ -90,15 +73,22 @@ class ListObat extends Component {
         });
     }
 
+    itemPressed = (index) => {
+        this.props.navigation.navigate('lihatObat', {
+            obat: this.itemList[index]
+        });
+    }
+
     render() {
-        let itemList = [...this.items];
-        itemList = this.filterItem(itemList);
-        itemList = this.sortItems(itemList);
+        this.itemList = [...listObat];
+        this.itemList = this.filterItem(this.itemList);
+        this.itemList = this.sortItems(this.itemList);
 
         return (
             <View>
-                { itemList.map((item, index) => (
-                    <ItemObat key={index} item={item} />
+                { this.itemList.map((item, index) => (
+                    <ItemObat key={index} item={item}
+                    onItemPressed={() => this.itemPressed(index)} />
                 )) }
             </View>
         )
@@ -140,7 +130,10 @@ export default class Beranda extends Component {
                 }} />
 
                 <Content style={{zIndex: -1}}>
-                    <ListObat ordering={this.state.ordering} searchQuery={this.state.searchQuery} />
+                    <ListObat
+                    navigation={this.props.navigation}
+                    ordering={this.state.ordering}
+                    searchQuery={this.state.searchQuery} />
                 </Content>
             </View>
         )

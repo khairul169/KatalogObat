@@ -56,7 +56,7 @@ export default class AppHeader extends Component {
                 iosBarStyle={this.iosBarStyle}
                 noLeft={!this.props.left}>
                 
-                <Left style={{flex: 1, paddingLeft: 8}}>
+                <Left style={[{paddingLeft: 8}, this.props.left ? {flex: 1} : null]}>
                     { this.props.left ? this.props.left : null }
                 </Left>
 
