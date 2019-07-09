@@ -14,6 +14,18 @@ const Cetirizine = {
         'Bayi baru lahir (neonatal) yang memiliki kelainan jantung bawaan.',
         'Ibu hamil pada trimester ketiga dan ibu menyusui.'
     ],
+    efekSamping: [
+        'Mengantuk',
+        'Pusing',
+        'Lemas dan lelah',
+        'Mual',
+        'Pusing',
+        'Mulut kering',
+        'Iritasi hidung',
+        'Sakit tenggorokan',
+        'Sakit perut',
+        'Diare'
+    ],
     referensi: [
         'https://en.wikipedia.org/wiki/Cetirizine',
         'https://www.alodokter.com/cetirizine'
@@ -21,7 +33,17 @@ const Cetirizine = {
 }
 
 const Dexamethasone = {
-    nama: 'Dexamethasone'
+    nama: 'Dexamethasone',
+    gambar: require('../../assets/obat-img/dexamethasone.jpg'),
+    golongan: 'Kortikosteroid',
+    manfaat: 'Mengatasi alergi dan peradangan, mual dan muntah akibat kemoterapi.',
+    penggunaan: 'Dewasa dan anak-anak',
+    sediaan: 'Tablet, Sirop, Injeksi, dan Infus',
+    deskripsi: "Dexamethasone adalah obat golongan kortikosteroid (glukokortikoid). Obat ini mengurangi respon defensif alami tubuh dan mengurangi gejala seperti pembengkakan dan reaksi alergi.\n\nObat ini juga dapat digunakan untuk mencegah mual dan muntah yang disebabkan oleh kemoterapi kanker.",
+    referensi: [
+        'https://www.alodokter.com/dexamethasone',
+        'https://hellosehat.com/obat/dexamethasone/'
+    ]
 }
 
 export {

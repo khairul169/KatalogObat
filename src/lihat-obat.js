@@ -35,7 +35,7 @@ export default class LihatObat extends Component {
 
                 <Content style={{zIndex: -1}} padder>
                     { obat.gambar && (
-                        <View style={{alignItems: 'center', marginBottom: 16}}>
+                        <View style={{alignItems: 'center', marginTop: 2, marginBottom: 10}}>
                             <Image source={obat.gambar} height={150} />
                         </View>
                     ) }
@@ -61,8 +61,20 @@ export default class LihatObat extends Component {
 
                     { obat.kontraIndikasi && (
                         <Card style={{padding: 16}}>
-                            <Text style={styles.cardTitle}>Kontra Indikasi:</Text>
+                            <Text style={styles.cardTitle}>Kontra Indikasi</Text>
                             { obat.kontraIndikasi.map((item, index) => (
+                               <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
+                                   <Text style={styles.dotList}>{'\u2022'}</Text>
+                                   <Text style={styles.descObat}>{item}</Text>
+                                </View>
+                            )) }
+                        </Card>
+                    ) }
+
+                    { obat.efekSamping && (
+                        <Card style={{padding: 16}}>
+                            <Text style={styles.cardTitle}>Efek Samping</Text>
+                            { obat.efekSamping.map((item, index) => (
                                <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
                                    <Text style={styles.dotList}>{'\u2022'}</Text>
                                    <Text style={styles.descObat}>{item}</Text>
@@ -121,7 +133,7 @@ const styles = StyleSheet.create({
     },
 
     cardTitle: {
-        fontWeight: 'bold', marginBottom: 2
+        fontWeight: 'bold', marginBottom: 5
     },
 
     itemReferensi: {
