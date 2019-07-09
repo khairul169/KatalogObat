@@ -20,23 +20,23 @@ class ItemObat extends Component {
             onPress={this.props.onItemPressed ? this.props.onItemPressed : null}>
                 <View style={{flex: 1, alignItems: 'center'}}>
                     <Image
-                    source={item.img}
+                    source={item.gambar}
                     height={48} />
                 </View>
 
                 <View style={{flex: 2}}>
                     <View style={{flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between'}}>
                         <Text style={styles.obatTitle}>
-                            {item.name}
+                            {item.nama}
                         </Text>
 
                         <Text style={styles.obatCat}>
-                            {item.category}
+                            {item.golongan}
                         </Text>
                     </View>
                     
                     <Text style={styles.obatDesc}>
-                        {item.desc}
+                        {item.manfaat}
                     </Text>
                 </View>
             </TouchableOpacity>
@@ -52,9 +52,9 @@ class ListObat extends Component {
 
         switch (ordering) {
             case ORDER_BY_CATEGORY:
-                return items.sort((a, b) => a.category.localeCompare(b.category));
+                return items.sort((a, b) => a.golongan.localeCompare(b.golongan));
             default:
-                return items.sort((a, b) => a.name.localeCompare(b.name));
+                return items.sort((a, b) => a.nama.localeCompare(b.nama));
         }
         return items;
     }
@@ -66,12 +66,12 @@ class ListObat extends Component {
         }
 
         return items.filter(item => {
-            const name = item.name.toLowerCase();
-            const category = item.category.toLowerCase();
-            const desc = item.desc.toLowerCase();
-            const fullDesc = item.fullDesc ? item.fullDesc.toLowerCase() : null;
-            return name.includes(query) || category.includes(query) || desc.includes(query)
-            || (fullDesc && fullDesc.includes(query));
+            const nama = item.nama.toLowerCase();
+            const golongan = item.golongan.toLowerCase();
+            const manfaat = item.manfaat.toLowerCase();
+            const deskripsi = item.deskripsi ? item.deskripsi.toLowerCase() : null;
+            return nama.includes(query) || golongan.includes(query) || manfaat.includes(query)
+            || (deskripsi && deskripsi.includes(query));
         });
     }
 

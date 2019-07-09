@@ -10,34 +10,38 @@ export default class LihatObat extends Component {
         const dataObat = [
             {
                 title: 'Golongan',
-                value: obat.category
+                value: obat.golongan
             },
             {
                 title: 'Manfaat',
-                value: obat.desc
+                value: obat.manfaat
             },
             {
                 title: 'Penggunaan Pada',
-                value: 'Dewasa'
+                value: obat.penggunaan
+            },
+            {
+                title: 'Sediaan',
+                value: obat.sediaan
             }
         ];
 
         return (
             <View style={{flex: 1}}>
-                <Header title={obat.name}
+                <Header title={obat.nama}
                 left={<Button transparent onPress={() => this.props.navigation.goBack()}>
                     <Icon name='ios-arrow-back' style={{fontSize: 20, color: '#333'}} />
                 </Button>} />
 
                 <Content style={{zIndex: -1}} padder>
                     <View style={{alignItems: 'center', marginBottom: 16}}>
-                        <Image source={obat.img} height={150} />
+                        <Image source={obat.gambar} height={150} />
                     </View>
 
                     <Card style={styles.dataObat}>
-                        { dataObat.map((item, index) => (
-                        <View key={index} style={[styles.dataItem, index >= dataObat.length-1 ? {
-                            marginBottom: 0, paddingBottom: 0, borderBottomWidth: 0
+                        { dataObat.map((item, index) => item.value && (
+                        <View key={index} style={[styles.dataItem, index === 0 ? {
+                            marginTop: 0, paddingTop: 0, borderTopWidth: 0
                         } : null]}>
                             <Text style={styles.dataItemKey}>{item.title}</Text>
                             <Text style={styles.dataItemValue}>{item.value}</Text>
@@ -47,9 +51,18 @@ export default class LihatObat extends Component {
 
                     <Card>
                         <Text style={styles.descObat}>
-                            {obat.fullDesc}
+                            {obat.deskripsi}
                         </Text>
                     </Card>
+
+                    { obat.referensi && (
+                        <Card style={{padding: 16}}>
+                            <Text style={{fontWeight: 'bold'}}>Referensi:</Text>
+                            { obat.referensi.map((item, index) => (
+                                <Text key={index} style={{color: '#525252', fontSize: 14, marginTop: 8}}>{item}</Text>
+                            )) }
+                        </Card>
+                    ) }
                 </Content>
             </View>
         )
@@ -59,21 +72,21 @@ export default class LihatObat extends Component {
 const styles = StyleSheet.create({
     dataObat: {
         flex: 1, flexDirection: 'column',
-        padding: 16, marginBottom: 16
+        padding: 16
     },
 
     dataItem: {
         flexDirection: 'row', alignItems: 'flex-start',
-        borderBottomWidth: 1, borderBottomColor: '#ddd',
-        paddingBottom: 8, marginBottom: 8
+        borderTopWidth: 1, borderTopColor: '#ddd',
+        paddingTop: 8, marginTop: 8
     },
 
     dataItemKey: {
-        flex: 1, fontSize: 16, fontWeight: 'bold', color: '#333'
+        flex: 1, fontSize: 14, fontWeight: 'bold', color: '#333'
     },
 
     dataItemValue: {
-        flex: 2, fontSize: 16, color: '#424242'
+        flex: 2, fontSize: 14, color: '#424242'
     },
     
     descObat: {
