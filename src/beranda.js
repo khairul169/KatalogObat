@@ -65,7 +65,9 @@ class ListObat extends Component {
     ]
 
     sortItems = (items) => {
-        switch (this.props.ordering) {
+        const ordering = this.props.ordering ? this.props.ordering : null;
+
+        switch (ordering) {
             case ORDER_BY_CATEGORY:
                 return items.sort((a, b) => a.category.localeCompare(b.category));
             default:
@@ -75,12 +77,10 @@ class ListObat extends Component {
     }
 
     filterItem = (items) => {
-        let query = '';
+        const query = this.props.searchQuery ? this.props.searchQuery.toLowerCase() : null;
         if (!query || query.trim() === '') {
             return items;
         }
-
-        query = query.toLowerCase();
 
         return items.filter(item => {
             const name = item.name.toLowerCase();
@@ -107,34 +107,40 @@ class ListObat extends Component {
 
 export default class Beranda extends Component {
     state = {
-        ordering: null
+        ordering: null,
+        searchQuery: ''
     }
 
     render() {
         return (
             <View style={styles.container}>
                 <Header
-                title="Katalog Obat Generik" searchBar
+                title="Katalog Obat" searchBar
                 left={<Icon type='FontAwesome5' name='pills' size={18} style={styles.icon} />}
                 right={
                     <PopupMenu iconStyle={styles.icon}
                     items={[
                         {
                             id: ORDER_BY_ALPHABET,
-                            title: 'Berdasarkan Abjad'
+                            icon: 'alphabetical',
+                            title: 'Abjad'
                         },
                         {
                             id: ORDER_BY_CATEGORY,
-                            title: 'Berdasarkan Kategori Obat'
+                            icon: 'apps',
+                            title: 'Golongan Obat'
                         }
                     ]}
                     onPress={(id) => {
                         this.setState({ordering: id})
                     }} />
-                } />
+                }
+                onSearchChanged={query => {
+                    this.setState({searchQuery: query});
+                }} />
 
-                <Content style={{zIndex: -1}} contentContainerStyle={styles.contentContainer}>
-                    <ListObat ordering={this.state.ordering} />
+                <Content style={{zIndex: -1}}>
+                    <ListObat ordering={this.state.ordering} searchQuery={this.state.searchQuery} />
                 </Content>
             </View>
         )
@@ -143,11 +149,8 @@ export default class Beranda extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
-    },
-
-    contentContainer: {
-        backgroundColor: '#efefef',
+        flex: 1,
+        backgroundColor: '#efefef'
     },
     
     icon: {

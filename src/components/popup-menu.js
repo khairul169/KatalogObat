@@ -25,7 +25,15 @@ export default class PopupMenu extends Component {
                 </Button>
             }>
                 { this.props.items.map((item, index) => (
-                    <MenuItem onPress={() => this.itemPressed(item.id)}>{item.title}</MenuItem>
+                    <MenuItem onPress={() => this.itemPressed(item.id)} style={{
+                        flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'
+                    }}>
+                        { item.icon && (
+                            <Icon type='MaterialCommunityIcons' name={item.icon} style={{fontSize: 20}} />
+                        ) }
+                        <View style={{width: 10, height: 1}} />
+                        <Text style={{fontSize: 16}}>{item.title}</Text>
+                    </MenuItem>
                 )) }
             </Menu>
         )

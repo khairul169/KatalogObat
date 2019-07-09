@@ -7,11 +7,27 @@ export default class AppHeader extends Component {
     iosBarStyle = 'dark-content';
 
     state = {
-        searchBar: false
+        searchBar: false,
+        searchText: ''
     }
 
     toggleSearchBar = (visible) => {
-        this.setState({searchBar: visible});
+        this.setState({
+            searchBar: visible,
+            searchText: ''
+        });
+
+        if (this.props.onSearchChanged) {
+            this.props.onSearchChanged('');
+        }
+    }
+
+    searchTextChanged = (text) => {
+        this.setState({searchText: text});
+
+        if (this.props.onSearchChanged) {
+            this.props.onSearchChanged(text);
+        }
     }
 
     render() {
@@ -23,7 +39,9 @@ export default class AppHeader extends Component {
 
                     <Item>
                         <Icon name='ios-search' style={styles.icon} />
-                        <Input autoFocus placeholder="Cari Obat..." />
+                        <Input autoFocus placeholder="Cari Obat..."
+                        value={this.state.searchText}
+                        onChangeText={this.searchTextChanged} />
                         <Button transparent onPress={() => this.toggleSearchBar(false)}>
                             <Icon name='ios-close' style={styles.icon} />
                         </Button>
