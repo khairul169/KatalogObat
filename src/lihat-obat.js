@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Linking } from 'react-native'
 import { Button, Icon, Content, Text, Card } from 'native-base'
 import Header from './components/header'
 import Image from 'react-native-scalable-image'
@@ -34,9 +34,11 @@ export default class LihatObat extends Component {
                 </Button>} />
 
                 <Content style={{zIndex: -1}} padder>
-                    <View style={{alignItems: 'center', marginBottom: 16}}>
-                        <Image source={obat.gambar} height={150} />
-                    </View>
+                    { obat.gambar && (
+                        <View style={{alignItems: 'center', marginBottom: 16}}>
+                            <Image source={obat.gambar} height={150} />
+                        </View>
+                    ) }
 
                     <Card style={styles.dataObat}>
                         { dataObat.map((item, index) => item.value && (
@@ -49,17 +51,38 @@ export default class LihatObat extends Component {
                         )) }
                     </Card>
 
-                    <Card>
-                        <Text style={styles.descObat}>
-                            {obat.deskripsi}
-                        </Text>
-                    </Card>
+                    { obat.deskripsi && (
+                        <Card style={{padding: 16}}>
+                            <Text style={styles.descObat}>
+                                {obat.deskripsi}
+                            </Text>
+                        </Card>
+                    ) }
+
+                    { obat.kontraIndikasi && (
+                        <Card style={{padding: 16}}>
+                            <Text style={styles.cardTitle}>Kontra Indikasi:</Text>
+                            { obat.kontraIndikasi.map((item, index) => (
+                               <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
+                                   <Text style={styles.dotList}>{'\u2022'}</Text>
+                                   <Text style={styles.descObat}>{item}</Text>
+                                </View>
+                            )) }
+                        </Card>
+                    ) }
 
                     { obat.referensi && (
                         <Card style={{padding: 16}}>
-                            <Text style={{fontWeight: 'bold'}}>Referensi:</Text>
+                            <Text style={styles.cardTitle}>Referensi</Text>
                             { obat.referensi.map((item, index) => (
-                                <Text key={index} style={{color: '#525252', fontSize: 14, marginTop: 8}}>{item}</Text>
+                                <Text key={index}
+                                style={[
+                                    styles.itemReferensi,
+                                    item.startsWith('http') ? {color: '#54a632'} : null
+                                ]}
+                                onPress={() => item.startsWith('http') && Linking.openURL(item)}>
+                                    {item}
+                                </Text>
                             )) }
                         </Card>
                     ) }
@@ -88,8 +111,20 @@ const styles = StyleSheet.create({
     dataItemValue: {
         flex: 2, fontSize: 14, color: '#424242'
     },
+
+    dotList: {
+        marginRight: 10, color: '#727272', fontSize: 15, paddingTop: 3
+    },
     
     descObat: {
-        lineHeight: 28, fontSize: 15, color: '#484848', padding: 16
+        flex: 1, lineHeight: 28, fontSize: 15, color: '#484848'
+    },
+
+    cardTitle: {
+        fontWeight: 'bold', marginBottom: 2
+    },
+
+    itemReferensi: {
+        color: '#484848', fontSize: 14, marginTop: 6
     }
 })

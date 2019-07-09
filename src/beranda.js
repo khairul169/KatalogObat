@@ -19,9 +19,9 @@ class ItemObat extends Component {
             <TouchableOpacity style={styles.obatItem}
             onPress={this.props.onItemPressed ? this.props.onItemPressed : null}>
                 <View style={{flex: 1, alignItems: 'center'}}>
-                    <Image
-                    source={item.gambar}
-                    height={48} />
+                    { item.gambar && (
+                        <Image source={item.gambar} height={48} />
+                    ) }
                 </View>
 
                 <View style={{flex: 2}}>
@@ -52,9 +52,11 @@ class ListObat extends Component {
 
         switch (ordering) {
             case ORDER_BY_CATEGORY:
-                return items.sort((a, b) => a.golongan.localeCompare(b.golongan));
+                return items.sort((a, b) => a.golongan && b.golongan
+                    && a.golongan.localeCompare(b.golongan));
             default:
-                return items.sort((a, b) => a.nama.localeCompare(b.nama));
+                return items.sort((a, b) => a.nama && b.nama
+                    && a.nama.localeCompare(b.nama));
         }
         return items;
     }
@@ -66,12 +68,15 @@ class ListObat extends Component {
         }
 
         return items.filter(item => {
-            const nama = item.nama.toLowerCase();
-            const golongan = item.golongan.toLowerCase();
-            const manfaat = item.manfaat.toLowerCase();
+            const nama = item.nama ? item.nama.toLowerCase() : null;
+            const golongan = item.golongan ? item.golongan.toLowerCase() : null;
+            const manfaat = item.manfaat ? item.manfaat.toLowerCase() : null;
             const deskripsi = item.deskripsi ? item.deskripsi.toLowerCase() : null;
-            return nama.includes(query) || golongan.includes(query) || manfaat.includes(query)
-            || (deskripsi && deskripsi.includes(query));
+
+            return (nama && nama.includes(query))
+                || (golongan && golongan.includes(query))
+                || (manfaat && manfaat.includes(query))
+                || (deskripsi && deskripsi.includes(query));
         });
     }
 
