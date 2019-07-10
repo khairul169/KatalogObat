@@ -63,7 +63,7 @@ export default class LihatObat extends Component {
 						<Card style={{padding: 16}}>
 							<Text style={styles.cardTitle}>Kontraindikasi</Text>
 							{ obat.kontraindikasi.map((item, index) => (
-							   <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
+							   <View key={index} style={{flexDirection: 'row', alignItems: 'flex-start'}}>
 								   <Text style={styles.dotList}>{'\u2022'}</Text>
 								   <Text style={styles.descObat}>{item}</Text>
 								</View>
@@ -75,7 +75,7 @@ export default class LihatObat extends Component {
 						<Card style={{padding: 16}}>
 							<Text style={styles.cardTitle}>Efek Samping</Text>
 							{ obat.efekSamping.map((item, index) => (
-							   <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
+							   <View key={index} style={{flexDirection: 'row', alignItems: 'flex-start'}}>
 								   <Text style={styles.dotList}>{'\u2022'}</Text>
 								   <Text style={styles.descObat}>{item}</Text>
 								</View>

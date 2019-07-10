@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Layer_3"
+   enable-background="new 0 0 64 64"
+   height="512"
+   viewBox="0 0 64 64"
+   width="512"
+   version="1.1"
+   sodipodi:docname="error.svg"
+   inkscape:export-filename="D:\Projects\React\KatalogObat\assets\error.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_3" />
+  <linearGradient
+     id="SVGID_1_"
+     gradientUnits="userSpaceOnUse"
+     x1="32"
+     x2="32"
+     y1="63"
+     y2="1">
+    <stop
+       offset="0"
+       stop-color="#9f2fff"
+       id="stop2" />
+    <stop
+       offset="1"
+       stop-color="#0bb1d3"
+       id="stop4" />
+  </linearGradient>
+  <path
+     d="m45 1c-9.925 0-18 8.075-18 18 0 1.533.213 3.014.576 4.435-2.119-.285-4.321-.435-6.576-.435-9.695 0-20 2.804-20 8v24c0 5.196 10.305 8 20 8s20-2.804 20-8v-18.464c1.289.294 2.624.464 4 .464 9.925 0 18-8.075 18-18s-8.075-18-18-18zm-24 24c2.504 0 4.939.192 7.254.557 1.446 3.678 4.065 6.76 7.399 8.797-3.413 1.652-8.809 2.646-14.653 2.646-10.607 0-18-3.162-18-6s7.393-6 18-6zm0 36c-10.607 0-18-3.162-18-6v-4.36c3.463 2.851 10.892 4.36 18 4.36s14.537-1.509 18-4.36v4.36c0 2.838-7.393 6-18 6zm0-8c-10.607 0-18-3.162-18-6v-4.36c3.463 2.851 10.892 4.36 18 4.36s14.537-1.509 18-4.36v4.36c0 2.838-7.393 6-18 6zm18-14c0 2.838-7.393 6-18 6s-18-3.162-18-6v-4.36c3.463 2.851 10.892 4.36 18 4.36 6.843 0 13.18-1.344 16.775-3.526.4.176.811.328 1.225.475zm6-4c-8.822 0-16-7.178-16-16s7.178-16 16-16 16 7.178 16 16-7.178 16-16 16zm-37.959 3.175c.266.181.758.471 1.593.816l-.766 1.848c-.798-.331-1.456-.672-1.956-1.014zm3.384 1.447c.548.164 1.147.323 1.798.473l-.445 1.949c-.672-.153-1.32-.324-1.929-.508zm24.534 6.553 1.129 1.65c-.5.342-1.158.683-1.956 1.014l-.766-1.848c.835-.345 1.327-.636 1.593-.816zm-3.384 1.447.576 1.914c-.608.184-1.257.354-1.929.508l-.445-1.949c.651-.15 1.25-.309 1.798-.473zm-21.15 8c.548.164 1.147.323 1.798.473l-.445 1.949c-.672-.153-1.32-.324-1.929-.508zm-3.384-1.447c.266.181.758.471 1.593.816l-.766 1.848c-.798-.331-1.456-.672-1.956-1.014zm37.959-49.175c-7.72 0-14 6.28-14 14s6.28 14 14 14 14-6.28 14-14-6.28-14-14-14zm0 26c-6.617 0-12-5.383-12-12s5.383-12 12-12 12 5.383 12 12-5.383 12-12 12zm6.653-7.557 1.662 1.113c-.561.837-1.244 1.585-2.03 2.221l-1.258-1.555c.63-.509 1.177-1.108 1.626-1.779zm.516-7.998 1.791-.891c.69 1.39 1.04 2.885 1.04 4.446s-.35 3.056-1.04 4.445l-1.791-.891c.552-1.109.831-2.305.831-3.554s-.279-2.445-.831-3.555zm-7.169 7.555c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3zm0 4c-.552 0-1-.448-1-1s.448-1 1-1 1 .448 1 1-.448 1-1 1zm.117-18h-.234c-1.59 0-2.883 1.293-2.883 2.883 0 .12.008.24.022.357l.861 6.893c.135 1.064 1.045 1.867 2.117 1.867s1.982-.803 2.116-1.868l.861-6.89c.015-.119.023-.239.023-.359 0-1.59-1.293-2.883-2.883-2.883zm.876 2.992-.861 6.891c-.018.133-.246.132-.264.001l-.861-6.894c-.005-.035-.007-.071-.007-.107 0-.487.396-.883.883-.883h.234c.487 0 .883.396.883.883 0 .036-.002.072-.007.109zm-31.993 23.008h12c1.654 0 3-1.346 3-3v-2c0-1.654-1.346-3-3-3h-12c-1.654 0-3 1.346-3 3v2c0 1.654 1.346 3 3 3zm5-2h-2v-4h2zm2-4h2v4h-2zm6 1v2c0 .552-.448 1-1 1h-1v-4h1c.552 0 1 .448 1 1zm-14 0c0-.552.448-1 1-1h1v4h-1c-.552 0-1-.448-1-1z"
+     fill="url(#SVGID_1_)"
+     id="path7" />
+</svg>
