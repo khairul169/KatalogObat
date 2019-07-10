@@ -1,4 +1,4 @@
-package com.katalogobat;
+package id.my.khairul.katalogobat;
 
 import com.facebook.react.ReactActivity;
 

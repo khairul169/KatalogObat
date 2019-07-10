@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.katalogobat",
+    package = "id.my.khairul.katalogobat",
 )
 
 android_resource(
     name = "res",
-    package = "com.katalogobat",
+    package = "id.my.khairul.katalogobat",
     res = "src/main/res",
 )
 
