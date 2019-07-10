@@ -103,7 +103,7 @@ class ListObat extends Component {
 			<View>
 				{ this.itemList.length <= 0 && (
 					<View style={{alignItems: 'center', marginTop: 100}}>
-						<Image source={require('../assets/empty-icon.png')} width={96} />
+						<Image source={require('../assets/error.png')} width={96} />
 						
 						<Text style={{color: '#484848', marginTop: 16, fontSize: 18}}>
 							Obat tidak ditemukan!

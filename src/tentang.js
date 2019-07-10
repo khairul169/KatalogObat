@@ -47,7 +47,7 @@ export default class Tentang extends Component {
 
 				<Content>
 					<Image
-						source={require('../assets/empty-icon.png')}
+						source={require('../assets/app-icon.png')}
 						height={150}
 						style={{alignSelf: 'center', marginVertical: 20}} />
 					
