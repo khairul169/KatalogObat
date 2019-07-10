@@ -25,7 +25,7 @@ export default class PopupMenu extends Component {
 				</Button>
 			}>
 				{ this.props.items.map((item, index) => (
-					<MenuItem onPress={() => this.itemPressed(item.id)} style={{
+					<MenuItem key={index} onPress={() => this.itemPressed(item.id)} style={{
 						flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'
 					}}>
 						{ item.icon && (
