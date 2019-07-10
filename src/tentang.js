@@ -3,7 +3,7 @@ import { View, Linking } from 'react-native'
 import Header from './components/header'
 import { Content, Text, Icon, Card, Button } from 'native-base';
 import Image from 'react-native-scalable-image';
-import { displayName as AppName } from '../app.json'
+import { displayName as appName } from '../app.json'
 import { version as appVersion } from '../package.json'
 
 export default class Tentang extends Component {
@@ -52,7 +52,7 @@ export default class Tentang extends Component {
 						style={{alignSelf: 'center', marginVertical: 20}} />
 					
 					<Text style={{textAlign: 'center', fontSize: 20, color: '#333'}}>
-						{AppName} v{appVersion}
+						{appName} v{appVersion}
 					</Text>
 
 					<Text style={{marginTop: 10, textAlign: 'center', fontSize: 14,

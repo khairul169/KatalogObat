@@ -7,6 +7,7 @@ import Image from 'react-native-scalable-image'
 import Header from './components/header'
 import PopupMenu from './components/popup-menu'
 import { listObat } from './daftar-obat'
+import { displayName as appName } from '../app.json'
 
 const ORDER_BY_ALPHABET = 0;
 const ORDER_BY_CATEGORY = 1;
@@ -134,7 +135,7 @@ export default class Beranda extends Component {
 		return (
 			<View style={styles.container}>
 				<Header
-				title="Katalog Obat" searchBar
+				title={appName} searchBar
 				left={<Icon type='FontAwesome5' name='pills' size={18} style={styles.icon} />}
 				right={
 					<PopupMenu iconStyle={styles.icon}
