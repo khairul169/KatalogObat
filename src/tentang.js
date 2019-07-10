@@ -3,8 +3,7 @@ import { View, Linking } from 'react-native'
 import Header from './components/header'
 import { Content, Text, Icon, Card, Button } from 'native-base';
 import Image from 'react-native-scalable-image';
-import { displayName as appName } from '../app.json'
-import { version as appVersion } from '../package.json'
+import { displayName as appName, version as appVersion } from '../app.json'
 
 export default class Tentang extends Component {
 	linkList = [
