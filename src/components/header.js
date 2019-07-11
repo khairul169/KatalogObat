@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { Header, Item, Input, Left, Body, Title, Right, Icon, Button } from 'native-base'
 
-export default class AppHeader extends Component {
-	statusBarColor = '#fff';
-	iosBarStyle = 'dark-content';
+const lowerAPI = (Platform.OS === 'android' && Platform.Version < 23);
 
+export default class AppHeader extends Component {
 	state = {
 		searchBar: false,
 		searchText: ''
 	}
+
+	statusBarColor = lowerAPI ? '#111' : '#fff';
+	iosBarStyle = lowerAPI ? null : 'dark-content';
 
 	toggleSearchBar = (visible) => {
 		this.setState({
