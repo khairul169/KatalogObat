@@ -1,6 +1,6 @@
 {
-  "name": "KatalogObat",
-  "version": "0.0.1",
+  "name": "katalogobat",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "react-native start",
