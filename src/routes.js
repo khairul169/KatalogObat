@@ -1,5 +1,6 @@
 import React from 'react'
 import { createAppContainer, createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
+import getSlideFromRightTransition from 'react-navigation-slide-from-right-transition'
 import BottomTabBar from './components/bottom-tab'
 
 // pages
@@ -19,7 +20,8 @@ const stackContainer = createStackNavigator({
 	beranda: berandaRoute,
 	lihatObat: LihatObat
 }, {
-	headerMode: 'none'
+	headerMode: 'none',
+	transitionConfig: getSlideFromRightTransition
 });
 
 export default createAppContainer(stackContainer);
